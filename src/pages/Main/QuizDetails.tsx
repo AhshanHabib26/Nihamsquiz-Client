@@ -175,24 +175,24 @@ const QuizDetails = () => {
       <Container>
         <div className="max-w-4xl mx-auto w-full ">
           {!isToggled && (
-            <div className="flex gap-5 border border-gray-200 rounded-md p-4">
-              <div>
+            <div className="flex flex-col lg:flex-row gap-5 border border-gray-200 rounded-md p-4">
+              <div className="flex items-center lg:items-start justify-center">
                 <img
-                  className="w-[350px] h-[200px] rounded-md"
+                  className="w-full lg:w-[400px] h-[250px] rounded-md"
                   src={avatar}
                   alt={data?.data?.title}
                 />
               </div>
 
               <div className="w-full">
-                <h1 className="text-lg hind-siliguri-medium text-gray-700">
+                <h1 className="text-md hind-siliguri-medium text-gray-700">
                   Title:{" "}
-                  <span className=" hind-siliguri-light">
+                  <span className=" hind-siliguri-semibold">
                     {data?.data?.title}
                   </span>
                 </h1>
 
-                <div className="flex items-center gap-1 text-lg hind-siliguri-medium text-gray-700">
+                <div className="flex gap-1 text-md hind-siliguri-medium text-gray-700">
                   Description:{" "}
                   {data?.data?.description && (
                     <p
@@ -203,25 +203,25 @@ const QuizDetails = () => {
                     ></p>
                   )}
                 </div>
-                <p className="text-lg hind-siliguri-medium text-gray-700">
+                <p className="text-md hind-siliguri-medium text-gray-700">
                   Duration:{" "}
                   <span className=" hind-siliguri-light">
                     {data?.data?.duration} Minutes
                   </span>
                 </p>
-                <p className="text-lg hind-siliguri-medium text-gray-700">
+                <p className="text-md hind-siliguri-medium text-gray-700">
                   Level:{" "}
                   <span className=" hind-siliguri-light">
                     {data?.data?.difficultyLevel}
                   </span>
                 </p>
-                <p className="text-lg hind-siliguri-medium text-gray-700">
+                <p className="text-md hind-siliguri-medium text-gray-700">
                   Category:{" "}
                   <span className=" hind-siliguri-light">
                     {data?.data?.category?.name}
                   </span>
                 </p>
-                <div className="flex items-center gap-1 text-lg hind-siliguri-medium text-gray-700">
+                <div className="flex items-center gap-1 text-md hind-siliguri-medium text-gray-700">
                   <p>Tags: </p>
                   {data.data.tags.map((t: string, index: number) => (
                     <div key={index}>

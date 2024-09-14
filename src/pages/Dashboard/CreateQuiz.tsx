@@ -56,8 +56,6 @@ export const CreateQuizPage = () => {
   const navigate = useNavigate();
   const { id } = useParams<{ id: string }>();
 
-  console.log(id);
-
   // Fetch single post data if ID is available
   const { data: quiz, isFetching: isFetchingPost } = useGetSingleQuizQuery(
     id || "",
@@ -262,7 +260,7 @@ export const CreateQuizPage = () => {
     <div>
       <div className="my-5 grid grid-cols-1 lg:grid-cols-2 gap-5">
         <Input
-          className="h-[50px]"
+          className="h-[50px] text-lg hind-siliguri-light"
           type="text"
           placeholder="Enter your title"
           aria-label="Title"
@@ -280,8 +278,8 @@ export const CreateQuizPage = () => {
               value={selectedCategory || ""}
               onValueChange={handleCategoryChange}
             >
-              <SelectTrigger className="h-[50px]" aria-label="Category">
-                <SelectValue placeholder="Choose category" />
+              <SelectTrigger  className="h-[50px] text-lg hind-siliguri-light" aria-label="Category">
+                <SelectValue  placeholder="Choose category" />
               </SelectTrigger>
               <SelectContent>
                 {isFetchingCategories && (
@@ -296,7 +294,7 @@ export const CreateQuizPage = () => {
                 )}
                 {categories.length > 0 ? (
                   categories.map((category) => (
-                    <SelectItem key={category.id} value={category.id}>
+                    <SelectItem className="text-lg hind-siliguri-light cursor-pointer" key={category.id} value={category.id}>
                       {category.name}
                     </SelectItem>
                   ))
@@ -316,15 +314,15 @@ export const CreateQuizPage = () => {
           theme="snow"
           value={description}
           onChange={setDescription}
-          className="h-[250px] flex flex-1 flex-col"
+          className="h-[200px] flex flex-1 flex-col "
         />
       </div>
-      <div className="mt-20 lg:mt-14">
+      <div className="mt-20 lg:mt-8">
         <div className=" grid grid-cols-1 lg:grid-cols-2 gap-5 my-5">
           <Input
             type="number"
             value={duration}
-            className="h-[50px]"
+            className="h-[50px] text-lg hind-siliguri-light"
             onChange={(e) => setDuration(parseInt(e.target.value))}
             placeholder="Duration (minutes)"
           />
@@ -334,7 +332,7 @@ export const CreateQuizPage = () => {
             value={difficultyLevel}
             onChange={(e) => setDifficultyLevel(e.target.value)}
             placeholder="Add Quiz difficulty level (Easy, Hard, Medium)"
-            className="h-[50px]"
+            className="h-[50px] text-lg hind-siliguri-light"
           />
         </div>
         <div className="mb-4">
@@ -343,7 +341,7 @@ export const CreateQuizPage = () => {
             value={input}
             onChange={handleInputChange}
             placeholder="Enter tags separated by commas"
-            className="h-[50px]"
+            className="h-[50px] text-lg hind-siliguri-light"
           />
         </div>
         {questions.map((question, index) => (
@@ -361,7 +359,7 @@ export const CreateQuizPage = () => {
                 handleQuestionChange(index, "questionText", e.target.value)
               }
               placeholder="Question Name"
-              className="h-[50px] mb-3"
+              className="h-[50px] mb-3 text-lg hind-siliguri-light"
             />
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
@@ -369,7 +367,7 @@ export const CreateQuizPage = () => {
                 <div key={optionIndex}>
                   <Input
                     type="text"
-                    className="h-[50px]"
+                    className="h-[50px] text-lg hind-siliguri-light"
                     value={option}
                     onChange={(e) =>
                       handleQuestionChange(
@@ -386,7 +384,7 @@ export const CreateQuizPage = () => {
 
             <Input
               type="text"
-              className="h-[50px] mt-3"
+              className="h-[50px] mt-3 text-lg hind-siliguri-light"
               value={question.correctOption}
               onChange={(e) =>
                 handleQuestionChange(index, "correctOption", e.target.value)
@@ -395,7 +393,7 @@ export const CreateQuizPage = () => {
             />
 
             <Textarea
-              className="mt-3"
+              className="mt-3 text-lg hind-siliguri-light"
               value={question.explanation}
               onChange={(e) =>
                 handleQuestionChange(index, "explanation", e.target.value)
@@ -406,8 +404,8 @@ export const CreateQuizPage = () => {
               {/* Show only the "Add Question" button if it's the first question */}
               {index === 0 && (
                 <Button
-                  size="lg"
-                  className="bg-green-600 hover:bg-green-500"
+                  size="default"
+                  className="bg-green-600 hover:bg-green-500 text-lg hind-siliguri-light"
                   onClick={handleAddQuestion}
                 >
                   Add Question
@@ -418,16 +416,16 @@ export const CreateQuizPage = () => {
               {index === questions.length - 1 && index > 0 && (
                 <>
                   <Button
-                    size="lg"
-                    className="bg-red-600 hover:bg-red-500"
+                    size="default"
+                    className="bg-red-600 hover:bg-red-500 text-lg hind-siliguri-light"
                     onClick={() => handleRemoveQuestion(index)}
                   >
                     Remove Question
                   </Button>
 
                   <Button
-                    size="lg"
-                    className="bg-green-600 hover:bg-green-500"
+                    size="default"
+                    className="bg-green-600 hover:bg-green-500 text-lg hind-siliguri-light"
                     onClick={handleAddQuestion}
                   >
                     Add Question
@@ -438,8 +436,8 @@ export const CreateQuizPage = () => {
               {/* Show only the "Remove Question" button for questions between 1 and second-to-last */}
               {index > 0 && index < questions.length - 1 && (
                 <Button
-                  size="lg"
-                  className="bg-red-600 hover:bg-red-500"
+                  size="default"
+                  className="bg-red-600 hover:bg-red-500 text-lg hind-siliguri-light"
                   onClick={() => handleRemoveQuestion(index)}
                 >
                   Remove Question
@@ -451,7 +449,7 @@ export const CreateQuizPage = () => {
       </div>
 
       <div className="flex items-center justify-between my-5">
-        <Button type="button" onClick={handleSubmit} size="lg">
+        <Button className="text-lg hind-siliguri-light" type="button" onClick={handleSubmit} size="default">
           {id ? "Update Quiz" : "Add Quiz"}
         </Button>
       </div>

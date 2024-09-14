@@ -104,9 +104,11 @@ const QuizSubmissionPage = () => {
                       .
                     </p>
                   )}
-                  <p className="mt-2 text-gray-700">
-                    <strong>Explanation:</strong> {question.explanation}
-                  </p>
+                 {
+                  question.explanation ?  <p className="mt-2 text-gray-700">
+                  <strong>Explanation:</strong> {question.explanation}
+                </p> : null
+                 }
                 </div>
               );
             })}

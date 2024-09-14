@@ -41,7 +41,7 @@ const HCategoryCard: React.FC<TCategoryProps> = ({ category }) => {
           ) : (
             <img src={category.image} className="w-8" alt={category.name} />
           )}
-          <span className=" text-md hind-siliguri-normal">{category.name}</span>
+          <span className=" text-lg hind-siliguri-normal">{category.name}</span>
         </div>
       </div>
     </div>

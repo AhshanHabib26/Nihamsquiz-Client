@@ -5,7 +5,7 @@ const FooterInfo = () => {
       <div>
         <div className="flex items-center mb-2">
           <img src={logoImg} alt="Logo image" />
-          <h1 className="text-2xl hind-siliguri-regular ml-2">NihamsBD</h1>
+          <h1 className="text-2xl hind-siliguri-regular ml-2">Nihams Quiz</h1>
         </div>
         <p className="text-lg hind-siliguri-light">
           All kinds of notes and guides as well as one of success in the care of

@@ -267,9 +267,9 @@ const QuizDetails = () => {
                         Question {currentQuestionIndex + 1} of{" "}
                         {data.data.questions.length}
                       </span>
-                      <div className="flex items-center gap-1 my-2">
-                        <FaQuestion size={20} className="text-red-600" />
-                        <h1 className="text-xl hind-siliguri-semibold">
+                      <div className="flex items-start lg:items-center gap-1 my-2">
+                        <FaQuestion size={18} className="text-red-600" />
+                        <h1 className="text-lg hind-siliguri-semibold">
                           {currentQuestion.questionText}
                         </h1>
                       </div>

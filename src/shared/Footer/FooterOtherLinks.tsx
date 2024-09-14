@@ -7,7 +7,7 @@ const FooterOtherLinks = () => {
       <div>
         <Link
           className="block text-lg hind-siliguri-light hover:text-customSecondery"
-          to="/blog"
+          to="/"
         >
           Blog
         </Link>

@@ -24,7 +24,7 @@ const HCategory = () => {
         </h1>
 
         {data?.data && data.data.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-5 max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 max-w-5xl mx-auto">
             {data?.data?.map((category: TCategory) => (
               <HCategoryCard category={category} key={category._id} />
             ))}

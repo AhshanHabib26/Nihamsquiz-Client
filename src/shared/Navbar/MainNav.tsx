@@ -51,7 +51,7 @@ export const MainNav = () => {
               >
                 Home
               </Link>
-              <Link
+              {/* <Link
                 to="/about-us"
                 className="text-gray-300  hover:text-gray-50 text-[16px]"
               >
@@ -62,7 +62,7 @@ export const MainNav = () => {
                 className="text-gray-300  hover:text-gray-50 text-[16px]"
               >
                 Contact Us
-              </Link>
+              </Link> */}
 
               {user?.role === "admin" && (
                 <Link
@@ -98,7 +98,7 @@ export const MainNav = () => {
                   >
                     Home
                   </Link>
-
+{/* 
                   <Link
                     to="/about-us"
                     className="text-muted-foreground hover:text-foreground"
@@ -110,7 +110,7 @@ export const MainNav = () => {
                     className="text-muted-foreground hover:text-foreground"
                   >
                     Contact Us
-                  </Link>
+                  </Link> */}
 
                   {user?.role === "admin" && (
                     <Link

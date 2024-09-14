@@ -1,0 +1,8 @@
+.mainContainer {
+  background-image: linear-gradient(
+    85.2deg,
+    rgba(33, 3, 40, 1) 7.5%,
+    rgb(65, 5, 72) 88.7%
+  );
+  clip-path: polygon(30% 0%, 70% 0%, 100% 0, 100% 70%, 100% 89%, 0 100%, 0 100%, 0 0);
+}

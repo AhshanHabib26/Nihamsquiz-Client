@@ -1,0 +1,7 @@
+.HBannerContainer{
+    background-image: url(../assets/images/quizBanner.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+}

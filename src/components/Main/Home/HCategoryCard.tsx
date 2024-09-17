@@ -1,6 +1,5 @@
 import { TCategoryProps } from "@/types/common.data";
 
-
 const stringToNumber = (str: string) => {
   let hash = 0;
   for (let i = 0; i < str.length; i++) {
@@ -9,7 +8,10 @@ const stringToNumber = (str: string) => {
   return Math.abs(hash);
 };
 
-const HCategoryCard: React.FC<TCategoryProps> = ({ category }) => {
+const HCategoryCard: React.FC<TCategoryProps> = ({
+  category,
+  setSelectedCategory,
+}) => {
   const bgColors = [
     "bg-gray-100",
     "bg-red-100",
@@ -35,13 +37,24 @@ const HCategoryCard: React.FC<TCategoryProps> = ({ category }) => {
   return (
     <div>
       <div className={`p-4 rounded ${bgColorClass} cursor-pointer shadow-lg`}>
-        <div className="flex items-center gap-2">
-          {category.image === null ? (
-            <img src={category.imageUrl} className="w-8" alt={category.name} />
-          ) : (
-            <img src={category.image} className="w-8" alt={category.name} />
-          )}
-          <span className=" text-md lg:text-lg md:text-lg hind-siliguri-normal">{category.name}</span>
+        <div>
+          <button
+            onClick={() => setSelectedCategory(category.name)}
+            className="flex items-center gap-2"
+          >
+            {category.image === null ? (
+              <img
+                src={category.imageUrl}
+                className="w-8"
+                alt={category.name}
+              />
+            ) : (
+              <img src={category.image} className="w-8" alt={category.name} />
+            )}
+            <span className=" text-md lg:text-lg md:text-lg hind-siliguri-normal">
+              {category.name}
+            </span>
+          </button>
         </div>
       </div>
     </div>

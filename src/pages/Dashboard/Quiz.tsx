@@ -16,7 +16,7 @@ import { toast } from "sonner";
 
 export const AllQuizPage = () => {
   const [page, setPage] = useState(1);
-  const limit = 5;
+  const limit = 6;
   const { data, isFetching } = useGetAllQuizQuery({ page, limit });
   const total = data?.meta?.total ?? 0;
   const [deleteQuiz] = useDeleteQuizMutation();

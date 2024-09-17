@@ -7,6 +7,7 @@ export type TCategory = {
 };
 export type TCategoryProps = {
   category: TCategory;
+  setSelectedCategory: (categoryId: string) => void;
 };
 
 export type TQuiz = {
@@ -23,6 +24,9 @@ export type TQuiz = {
   tags?: string[];
   difficultyLevel: string;
   createdAt?: string;
+  category?: {
+    name: string
+  }
 };
 
 export type TQuizProps = {
